@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Learner Dashboard - Capacity Connect</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet"
+          href="dashboard.css">
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+    <!-- BRAND -->
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            <img src="logo.png"
+                 alt="Capacity Connect">
+        </div>
+
+        <div class="brand-text">
+            <h2>Capacity</h2>
+            <span>CONNECT</span>
+        </div>
+
+    </div>
+
+
+    <!-- MAIN MENU -->
+
+    <div class="menu-title">
+        MAIN MENU
+    </div>
+
+
+    <div class="menu-item active"
+         onclick="showSection('overview', this)">
+
+        <i class="fa-solid fa-grip"></i>
+
+        <span>Learner Dashboard</span>
+
+    </div>
+
+
+    <div class="menu-item"
+         onclick="showSection('courses', this)">
+
+        <i class="fa-solid fa-book-open"></i>
+
+        <span>My Courses</span>
+
+    </div>
+
+
+    <div class="menu-item"
+         onclick="showSection('enrollment', this)">
+
+        <i class="fa-solid fa-user-plus"></i>
+
+        <span>Enrollment</span>
+
+    </div>
+
+
+    <div class="menu-item"
+         onclick="showSection('skills', this)">
+
+        <i class="fa-solid fa-brain"></i>
+
+        <span>Skills & Competencies</span>
+
+    </div>
+
+
+    <div class="menu-item"
+         onclick="showSection('assessment', this)">
+
+        <i class="fa-solid fa-clipboard-check"></i>
+
+        <span>Assessments</span>
+
+    </div>
+
+
+    <div class="menu-item"
+         onclick="showSection('certificates', this)">
+
+        <i class="fa-solid fa-certificate"></i>
+
+        <span>Certificates</span>
+
+    </div>
+
+
+    <div class="menu-item"
+         onclick="showSection('knowledge', this)">
+
+        <i class="fa-solid fa-lightbulb"></i>
+
+        <span>Knowledge Hub</span>
+
+    </div>
+
+
+    <!-- ACCOUNT -->
+
+    <div class="menu-title second">
+        ACCOUNT
+    </div>
+
+
+    <!-- PROFILE BUTTON - FIXED -->
+
+    <div class="menu-item"
+         onclick="openProfile(this)">
+
+        <i class="fa-solid fa-user"></i>
+
+        <span>My Profile</span>
+
+    </div>
+
+
+    <!-- BACK HOME -->
+
+    <div class="menu-item"
+         onclick="goHome()">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>Back to Home</span>
+
+    </div>
+
+
+    <!-- HELP -->
+
+    <div class="sidebar-bottom">
+
+        <div class="help-box">
+
+            <i class="fa-solid fa-circle-question"></i>
+
+            <div>
+
+                <strong>Need Help?</strong>
+
+                <p>
+                    Explore the learning portal
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN AREA
+===================================================== -->
+
+<main class="main">
+
+
+    <!-- =================================================
+         TOP BAR
+    ================================================== -->
+
+    <header class="topbar">
+
+
+        <!-- MOBILE MENU -->
+
+        <button class="mobile-menu"
+                onclick="toggleSidebar()">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <!-- SEARCH -->
+
+        <div class="search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input type="text"
+                   id="searchInput"
+                   placeholder="Search courses, skills, resources...">
+
+        </div>
+
+
+        <!-- TOP ACTIONS -->
+
+        <div class="top-actions">
+
+
+            <!-- NOTIFICATION -->
+
+            <button class="notification"
+                    onclick="showNotification()">
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span></span>
+
+            </button>
+
+
+            <!-- PROFILE - FIXED -->
+
+            <div class="profile"
+                 onclick="openProfile()">
+
+                <div class="avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <div class="profile-info">
+
+                    <strong id="topProfileName">
+                        Welcome Learner
+                    </strong>
+
+                    <small>
+                        Learning Member
+                    </small>
+
+                </div>
+
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         OVERVIEW
+    ================================================== -->
+
+    <section id="overview"
+             class="page-section active-section">
+
+
+        <!-- WELCOME -->
+
+        <div class="welcome">
+
+            <div>
+
+                <p class="welcome-small">
+                    GOOD TO SEE YOU 👋
+                </p>
+
+                <h1>
+                    Welcome to your
+                    <span>Learning Dashboard</span>
+                </h1>
+
+                <p class="welcome-text">
+
+                    Continue your learning journey,
+                    develop your competencies and
+                    achieve your goals with
+                    Capacity Connect.
+
+                </p>
+
+            </div>
+
+
+            <div class="welcome-illustration">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Enrolled Courses</span>
+
+                    <h2 id="courseCount">
+                        08
+                    </h2>
+
+                    <small>
+                        <i class="fa-solid fa-arrow-up"></i>
+                        2 this month
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Learning Progress</span>
+
+                    <h2>
+                        72%
+                    </h2>
+
+                    <small>
+                        Keep going!
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Skills Developed</span>
+
+                    <h2>
+                        12
+                    </h2>
+
+                    <small>
+                        3 recently improved
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Certificates</span>
+
+                    <h2>
+                        04
+                    </h2>
+
+                    <small>
+                        Achievements earned
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- DASHBOARD GRID -->
+
+        <div class="dashboard-grid">
+
+
+            <!-- CONTINUE LEARNING -->
+
+            <div class="panel continue-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <p class="panel-label">
+                            YOUR LEARNING
+                        </p>
+
+                        <h2>
+                            Continue Learning
+                        </h2>
+
+                    </div>
+
+                    <button onclick="showSection('courses')">
+                        View All
+                    </button>
+
+                </div>
+
+
+
+                <div class="course-row">
+
+                    <div class="course-icon blue-bg">
+
+                        <i class="fa-solid fa-code"></i>
+
+                    </div>
+
+
+                    <div class="course-info">
+
+                        <h3>
+                            Digital Skills & Technology
+                        </h3>
+
+                        <p>
+                            Module 4 • Introduction to Digital Tools
+                        </p>
+
+                        <div class="progress-bar">
+
+                            <div style="width:78%"></div>
+
+                        </div>
+
+                        <small>
+                            78% completed
+                        </small>
+
+                    </div>
+
+
+                    <button class="continue-btn"
+                            onclick="continueCourse('Digital Skills & Technology')">
+
+                        Continue
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="course-row">
+
+                    <div class="course-icon purple-bg">
+
+                        <i class="fa-solid fa-people-group"></i>
+
+                    </div>
+
+
+                    <div class="course-info">
+
+                        <h3>
+                            Leadership & Team Development
+                        </h3>
+
+                        <p>
+                            Module 2 • Effective Team Communication
+                        </p>
+
+                        <div class="progress-bar">
+
+                            <div style="width:52%"></div>
+
+                        </div>
+
+                        <small>
+                            52% completed
+                        </small>
+
+                    </div>
+
+
+                    <button class="continue-btn"
+                            onclick="continueCourse('Leadership & Team Development')">
+
+                        Continue
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="course-row">
+
+                    <div class="course-icon green-bg">
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                    </div>
+
+
+                    <div class="course-info">
+
+                        <h3>
+                            Data & Performance Management
+                        </h3>
+
+                        <p>
+                            Module 1 • Understanding Performance Metrics
+                        </p>
+
+                        <div class="progress-bar">
+
+                            <div style="width:31%"></div>
+
+                        </div>
+
+                        <small>
+                            31% completed
+                        </small>
+
+                    </div>
+
+
+                    <button class="continue-btn"
+                            onclick="continueCourse('Data & Performance Management')">
+
+                        Continue
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RIGHT COLUMN -->
+
+            <div class="right-column">
+
+
+                <!-- GOAL -->
+
+                <div class="panel goal-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <p class="panel-label">
+                                THIS WEEK
+                            </p>
+
+                            <h2>
+                                Learning Goal
+                            </h2>
+
+                        </div>
+
+                        <i class="fa-solid fa-bullseye"></i>
+
+                    </div>
+
+
+                    <div class="goal-content">
+
+                        <div class="circle-progress">
+
+                            <span>
+                                72%
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Great progress!
+                            </strong>
+
+                            <p>
+                                3 of 4 weekly learning
+                                goals completed.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RECOMMENDED -->
+
+                <div class="panel recommendation">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <p class="panel-label">
+                                FOR YOU
+                            </p>
+
+                            <h2>
+                                Recommended
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="recommend-item"
+                         onclick="showSection('knowledge')">
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                        <div>
+
+                            <strong>
+                                Problem Solving Skills
+                            </strong>
+
+                            <p>
+                                Based on your skill profile
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right arrow"></i>
+
+                    </div>
+
+
+
+                    <div class="recommend-item"
+                         onclick="showSection('knowledge')">
+
+                        <i class="fa-solid fa-comments"></i>
+
+                        <div>
+
+                            <strong>
+                                Communication Essentials
+                            </strong>
+
+                            <p>
+                                Improve your workplace skills
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right arrow"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BOTTOM GRID -->
+
+        <div class="bottom-grid">
+
+
+            <!-- SKILLS -->
+
+            <div class="panel skills-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <p class="panel-label">
+                            COMPETENCY DEVELOPMENT
+                        </p>
+
+                        <h2>
+                            My Skills
+                        </h2>
+
+                    </div>
+
+                    <button onclick="showSection('skills')">
+                        Manage
+                    </button>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="skill-title">
+
+                        <span>
+                            Communication
+                        </span>
+
+                        <strong>
+                            85%
+                        </strong>
+
+                    </div>
+
+                    <div class="skill-bar">
+                        <div style="width:85%"></div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill">
+
+                    <div class="skill-title">
+
+                        <span>
+                            Digital Literacy
+                        </span>
+
+                        <strong>
+                            78%
+                        </strong>
+
+                    </div>
+
+                    <div class="skill-bar">
+                        <div style="width:78%"></div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill">
+
+                    <div class="skill-title">
+
+                        <span>
+                            Leadership
+                        </span>
+
+                        <strong>
+                            64%
+                        </strong>
+
+                    </div>
+
+                    <div class="skill-bar">
+                        <div style="width:64%"></div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill">
+
+                    <div class="skill-title">
+
+                        <span>
+                            Data Analysis
+                        </span>
+
+                        <strong>
+                            49%
+                        </strong>
+
+                    </div>
+
+                    <div class="skill-bar">
+                        <div style="width:49%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- KNOWLEDGE -->
+
+            <div class="panel knowledge-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <p class="panel-label">
+                            KNOWLEDGE SHARING
+                        </p>
+
+                        <h2>
+                            Knowledge Hub
+                        </h2>
+
+                    </div>
+
+                    <button onclick="showSection('knowledge')">
+                        Explore
+                    </button>
+
+                </div>
+
+
+
+                <div class="knowledge-item">
+
+                    <div class="knowledge-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Training Resources
+                        </strong>
+
+                        <p>
+                            24 new resources available
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="knowledge-item">
+
+                    <div class="knowledge-icon">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Learning Videos
+                        </strong>
+
+                        <p>
+                            Discover expert-led content
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="knowledge-item">
+
+                    <div class="knowledge-icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Community Discussions
+                        </strong>
+
+                        <p>
+                            Share knowledge with others
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MY COURSES
+    ================================================== -->
+
+    <section id="courses"
+             class="page-section">
+
+        <div class="page-header">
+
+            <div>
+
+                <p class="panel-label">
+                    LEARNING PROGRAMS
+                </p>
+
+                <h1>
+                    My Courses
+                </h1>
+
+                <p>
+                    View your enrolled courses and
+                    continue your learning journey.
+                </p>
+
+            </div>
+
+            <button onclick="showSection('overview')">
+                <i class="fa-solid fa-arrow-left"></i>
+                Dashboard
+            </button>
+
+        </div>
+
+
+        <div id="courseContainer"
+             class="course-container">
+
+            <div class="course-card">
+
+                <div class="course-card-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <div class="course-card-content">
+
+                    <span class="course-category">
+                        DIGITAL SKILLS
+                    </span>
+
+                    <h2>
+                        Digital Skills & Technology
+                    </h2>
+
+                    <p>
+                        Learn essential digital tools
+                        and modern technology skills.
+                    </p>
+
+                    <div class="course-details">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            8 Weeks
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-chart-line"></i>
+                            78% Complete
+                        </span>
+
+                    </div>
+
+                    <div class="large-progress">
+                        <div style="width:78%"></div>
+                    </div>
+
+                    <button class="primary-btn"
+                            onclick="continueCourse('Digital Skills & Technology')">
+
+                        Continue Course
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="course-card">
+
+                <div class="course-card-icon purple-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+
+                <div class="course-card-content">
+
+                    <span class="course-category">
+                        LEADERSHIP
+                    </span>
+
+                    <h2>
+                        Leadership & Team Development
+                    </h2>
+
+                    <p>
+                        Develop leadership,
+                        communication and teamwork skills.
+                    </p>
+
+                    <div class="course-details">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            6 Weeks
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-chart-line"></i>
+                            52% Complete
+                        </span>
+
+                    </div>
+
+                    <div class="large-progress">
+                        <div style="width:52%"></div>
+                    </div>
+
+                    <button class="primary-btn"
+                            onclick="continueCourse('Leadership & Team Development')">
+
+                        Continue Course
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="course-card">
+
+                <div class="course-card-icon green-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+
+                <div class="course-card-content">
+
+                    <span class="course-category">
+                        DATA
+                    </span>
+
+                    <h2>
+                        Data & Performance Management
+                    </h2>
+
+                    <p>
+                        Understand performance metrics
+                        and data-driven decision making.
+                    </p>
+
+                    <div class="course-details">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            5 Weeks
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-chart-line"></i>
+                            31% Complete
+                        </span>
+
+                    </div>
+
+                    <div class="large-progress">
+                        <div style="width:31%"></div>
+                    </div>
+
+                    <button class="primary-btn"
+                            onclick="continueCourse('Data & Performance Management')">
+
+                        Continue Course
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ENROLLMENT
+    ================================================== -->
+
+    <section id="enrollment"
+             class="page-section">
+
+        <div class="page-header">
+
+            <div>
+
+                <p class="panel-label">
+                    COURSE ENROLLMENT
+                </p>
+
+                <h1>
+                    Enroll in a Course
+                </h1>
+
+                <p>
+                    Choose a training program that
+                    matches your learning goals.
+                </p>
+
+            </div>
+
+            <button onclick="showSection('courses')">
+                <i class="fa-solid fa-book-open"></i>
+                My Courses
+            </button>
+
+        </div>
+
+
+        <div class="enrollment-container">
+
+
+            <div class="enrollment-card">
+
+                <div class="enrollment-icon blue-bg">
+
+                    <i class="fa-solid fa-code"></i>
+
+                </div>
+
+                <div class="enrollment-info">
+
+                    <span class="course-category">
+                        DIGITAL SKILLS
+                    </span>
+
+                    <h2>
+                        Digital Skills & Technology
+                    </h2>
+
+                    <p>
+                        Build practical digital skills
+                        for modern workplaces.
+                    </p>
+
+                    <div class="enrollment-meta">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            8 Weeks
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-users"></i>
+                            Beginner
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <button class="enroll-btn"
+                        onclick="enrollCourse('Digital Skills & Technology')">
+
+                    Enroll Now
+
+                </button>
+
+            </div>
+
+
+
+            <div class="enrollment-card">
+
+                <div class="enrollment-icon purple-bg">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                </div>
+
+                <div class="enrollment-info">
+
+                    <span class="course-category">
+                        LEADERSHIP
+                    </span>
+
+                    <h2>
+                        Leadership & Team Development
+                    </h2>
+
+                    <p>
+                        Improve communication,
+                        leadership and teamwork.
+                    </p>
+
+                    <div class="enrollment-meta">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            6 Weeks
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-users"></i>
+                            Intermediate
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <button class="enroll-btn"
+                        onclick="enrollCourse('Leadership & Team Development')">
+
+                    Enroll Now
+
+                </button>
+
+            </div>
+
+
+
+            <div class="enrollment-card">
+
+                <div class="enrollment-icon green-bg">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </div>
+
+                <div class="enrollment-info">
+
+                    <span class="course-category">
+                        DATA
+                    </span>
+
+                    <h2>
+                        Data & Performance Management
+                    </h2>
+
+                    <p>
+                        Learn how to use data and
+                        performance indicators.
+                    </p>
+
+                    <div class="enrollment-meta">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            5 Weeks
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-users"></i>
+                            Intermediate
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <button class="enroll-btn"
+                        onclick="enrollCourse('Data & Performance Management')">
+
+                    Enroll Now
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SKILLS
+    ================================================== -->
+
+    <section id="skills"
+             class="page-section">
+
+        <div class="page-header">
+
+            <div>
+
+                <p class="panel-label">
+                    COMPETENCY DEVELOPMENT
+                </p>
+
+                <h1>
+                    Skills & Competencies
+                </h1>
+
+                <p>
+                    Track your competency levels
+                    and development areas.
+                </p>
+
+            </div>
+
+            <button onclick="showSection('overview')">
+                <i class="fa-solid fa-arrow-left"></i>
+                Dashboard
+            </button>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-detail-card">
+
+                <div class="skill-detail-header">
+
+                    <div class="skill-big-icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Communication
+                        </h2>
+
+                        <p>
+                            Advanced
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        85%
+                    </strong>
+
+                </div>
+
+                <div class="large-progress">
+                    <div style="width:85%"></div>
+                </div>
+
+                <p>
+                    Strong ability to communicate
+                    ideas clearly and effectively.
+                </p>
+
+            </div>
+
+
+
+            <div class="skill-detail-card">
+
+                <div class="skill-detail-header">
+
+                    <div class="skill-big-icon">
+                        <i class="fa-solid fa-laptop"></i>
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Digital Literacy
+                        </h2>
+
+                        <p>
+                            Advanced
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        78%
+                    </strong>
+
+                </div>
+
+                <div class="large-progress">
+                    <div style="width:78%"></div>
+                </div>
+
+                <p>
+                    Good knowledge of digital tools
+                    and workplace technology.
+                </p>
+
+            </div>
+
+
+
+            <div class="skill-detail-card">
+
+                <div class="skill-detail-header">
+
+                    <div class="skill-big-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Leadership
+                        </h2>
+
+                        <p>
+                            Intermediate
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        64%
+                    </strong>
+
+                </div>
+
+                <div class="large-progress">
+                    <div style="width:64%"></div>
+                </div>
+
+                <p>
+                    Developing leadership and
+                    team management abilities.
+                </p>
+
+            </div>
+
+
+
+            <div class="skill-detail-card">
+
+                <div class="skill-detail-header">
+
+                    <div class="skill-big-icon">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Data Analysis
+                        </h2>
+
+                        <p>
+                            Developing
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        49%
+                    </strong>
+
+                </div>
+
+                <div class="large-progress">
+                    <div style="width:49%"></div>
+                </div>
+
+                <p>
+                    Continue practicing data
+                    interpretation and analysis.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ASSESSMENTS
+    ================================================== -->
+
+    <section id="assessment"
+             class="page-section">
+
+        <div class="page-header">
+
+            <div>
+
+                <p class="panel-label">
+                    LEARNING EVALUATION
+                </p>
+
+                <h1>
+                    Assessments
+                </h1>
+
+                <p>
+                    Complete assessments and monitor
+                    your learning outcomes.
+                </p>
+
+            </div>
+
+            <button onclick="showSection('overview')">
+                <i class="fa-solid fa-arrow-left"></i>
+                Dashboard
+            </button>
+
+        </div>
+
+
+        <div class="assessment-grid">
+
+
+            <div class="assessment-card">
+
+                <div class="assessment-icon">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+
+                <div>
+
+                    <span class="course-category">
+                        DIGITAL SKILLS
+                    </span>
+
+                    <h2>
+                        Digital Tools Assessment
+                    </h2>
+
+                    <p>
+                        Test your knowledge of
+                        essential digital tools.
+                    </p>
+
+                    <div class="assessment-meta">
+
+                        <span>
+                            <i class="fa-solid fa-list-check"></i>
+                            20 Questions
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            30 Minutes
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <button class="primary-btn"
+                        onclick="startAssessment('Digital Tools Assessment')">
+
+                    Start Assessment
+
+                </button>
+
+            </div>
+
+
+
+            <div class="assessment-card">
+
+                <div class="assessment-icon purple-assessment">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+
+                    <span class="course-category">
+                        LEADERSHIP
+                    </span>
+
+                    <h2>
+                        Leadership Assessment
+                    </h2>
+
+                    <p>
+                        Evaluate your leadership
+                        and teamwork knowledge.
+                    </p>
+
+                    <div class="assessment-meta">
+
+                        <span>
+                            <i class="fa-solid fa-list-check"></i>
+                            25 Questions
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            40 Minutes
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <button class="primary-btn"
+                        onclick="startAssessment('Leadership Assessment')">
+
+                    Start Assessment
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CERTIFICATES
+    ================================================== -->
+
+    <section id="certificates"
+             class="page-section">
+
+        <div class="page-header">
+
+            <div>
+
+                <p class="panel-label">
+                    ACHIEVEMENTS
+                </p>
+
+                <h1>
+                    Certificates
+                </h1>
+
+                <p>
+                    View your completed training
+                    and earned certificates.
+                </p>
+
+            </div>
+
+            <button onclick="showSection('overview')">
+                <i class="fa-solid fa-arrow-left"></i>
+                Dashboard
+            </button>
+
+        </div>
+
+
+        <div class="certificate-grid">
+
+
+            <div class="certificate-card">
+
+                <div class="certificate-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        COMPLETED
+                    </span>
+
+                    <h2>
+                        Digital Skills & Technology
+                    </h2>
+
+                    <p>
+                        Certificate No:
+                        CC-DST-2026-001
+                    </p>
+
+                    <small>
+                        Issued: 15 August 2026
+                    </small>
+
+                </div>
+
+                <button onclick="viewCertificate('Digital Skills & Technology')">
+                    <i class="fa-solid fa-eye"></i>
+                    View
+                </button>
+
+            </div>
+
+
+
+            <div class="certificate-card">
+
+                <div class="certificate-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        COMPLETED
+                    </span>
+
+                    <h2>
+                        Communication Essentials
+                    </h2>
+
+                    <p>
+                        Certificate No:
+                        CC-CE-2026-002
+                    </p>
+
+                    <small>
+                        Issued: 02 July 2026
+                    </small>
+
+                </div>
+
+                <button onclick="viewCertificate('Communication Essentials')">
+                    <i class="fa-solid fa-eye"></i>
+                    View
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         KNOWLEDGE HUB
+    ================================================== -->
+
+    <section id="knowledge"
+             class="page-section">
+
+        <div class="page-header">
+
+            <div>
+
+                <p class="panel-label">
+                    KNOWLEDGE SHARING
+                </p>
+
+                <h1>
+                    Knowledge Hub
+                </h1>
+
+                <p>
+                    Explore organizational resources,
+                    articles, videos and shared knowledge.
+                </p>
+
+            </div>
+
+            <button onclick="showSection('overview')">
+                <i class="fa-solid fa-arrow-left"></i>
+                Dashboard
+            </button>
+
+        </div>
+
+
+        <div class="knowledge-grid">
+
+
+            <div class="knowledge-card">
+
+                <div class="knowledge-card-icon">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+
+                <span>
+                    RESOURCES
+                </span>
+
+                <h2>
+                    Training Resources
+                </h2>
+
+                <p>
+                    Explore guides, documents and
+                    learning materials.
+                </p>
+
+                <button onclick="openResource('Training Resources')">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+
+            <div class="knowledge-card">
+
+                <div class="knowledge-card-icon">
+                    <i class="fa-solid fa-video"></i>
+                </div>
+
+                <span>
+                    VIDEOS
+                </span>
+
+                <h2>
+                    Learning Videos
+                </h2>
+
+                <p>
+                    Discover expert-led learning
+                    videos and lectures.
+                </p>
+
+                <button onclick="openResource('Learning Videos')">
+                    Watch
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+
+            <div class="knowledge-card">
+
+                <div class="knowledge-card-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+
+                <span>
+                    COMMUNITY
+                </span>
+
+                <h2>
+                    Community Discussions
+                </h2>
+
+                <p>
+                    Share knowledge and learn
+                    from other learners.
+                </p>
+
+                <button onclick="openResource('Community Discussions')">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+
+            <div class="knowledge-card">
+
+                <div class="knowledge-card-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+
+                <span>
+                    ARTICLES
+                </span>
+
+                <h2>
+                    Learning Articles
+                </h2>
+
+                <p>
+                    Read useful articles and
+                    professional development tips.
+                </p>
+
+                <button onclick="openResource('Learning Articles')">
+                    Read
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MY PROFILE
+         THIS IS THE FIX
+    ================================================== -->
+
+    <section id="profile"
+             class="page-section">
+
+        <div class="page-header">
+
+            <div>
+
+                <p class="panel-label">
+                    ACCOUNT
+                </p>
+
+                <h1>
+                    My Profile
+                </h1>
+
+                <p>
+                    View and manage your learner profile.
+                </p>
+
+            </div>
+
+            <button onclick="showSection('overview')">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Dashboard
+
+            </button>
+
+        </div>
+
+
+        <div class="profile-page">
+
+
+            <!-- PROFILE HEADER -->
+
+            <div class="profile-card-main">
+
+                <div class="profile-avatar-large">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <div class="profile-main-info">
+
+                    <h2 id="profileName">
+                        Welcome Learner
+                    </h2>
+
+                    <p>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Learner
+                    </p>
+
+                    <span>
+                        <i class="fa-solid fa-circle"></i>
+                        Active Member
+                    </span>
+
+                </div>
+
+
+                <button class="edit-profile-btn"
+                        onclick="editProfile()">
+
+                    <i class="fa-solid fa-pen"></i>
+
+                    Edit Profile
+
+                </button>
+
+            </div>
+
+
+
+            <!-- PROFILE INFORMATION -->
+
+            <div class="profile-information">
+
+
+                <div class="profile-info-card">
+
+                    <div class="profile-section-title">
+
+                        <i class="fa-solid fa-id-card"></i>
+
+                        <h2>
+                            Personal Information
+                        </h2>
+
+                    </div>
+
+
+                    <div class="profile-fields">
+
+
+                        <div class="profile-field">
+
+                            <label>
+                                Full Name
+                            </label>
+
+                            <div>
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <span id="displayName">
+                                    Welcome Learner
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="profile-field">
+
+                            <label>
+                                Email Address
+                            </label>
+
+                            <div>
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                                <span id="displayEmail">
+                                    learner@capacityconnect.com
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="profile-field">
+
+                            <label>
+                                Role
+                            </label>
+
+                            <div>
+
+                                <i class="fa-solid fa-user-graduate"></i>
+
+                                <span>
+                                    Learner
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="profile-field">
+
+                            <label>
+                                Member Since
+                            </label>
+
+                            <div>
+
+                                <i class="fa-solid fa-calendar"></i>
+
+                                <span>
+                                    January 2026
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LEARNING SUMMARY -->
+
+                <div class="profile-info-card">
+
+                    <div class="profile-section-title">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <h2>
+                            Learning Summary
+                        </h2>
+
+                    </div>
+
+
+                    <div class="profile-summary">
+
+
+                        <div>
+
+                            <strong>
+                                08
+                            </strong>
+
+                            <span>
+                                Courses
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                72%
+                            </strong>
+
+                            <span>
+                                Progress
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                12
+                            </strong>
+
+                            <span>
+                                Skills
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                04
+                            </strong>
+
+                            <span>
+                                Certificates
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     EDIT PROFILE MODAL
+===================================================== -->
+
+<div class="modal-overlay"
+     id="profileModal">
+
+    <div class="profile-modal">
+
+
+        <button class="modal-close"
+                onclick="closeProfileModal()">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="modal-icon">
+
+            <i class="fa-solid fa-user-pen"></i>
+
+        </div>
+
+
+        <h2>
+            Edit Profile
+        </h2>
+
+        <p>
+            Update your learner information.
+        </p>
+
+
+        <form onsubmit="saveProfile(event)">
+
+
+            <label>
+                Full Name
+            </label>
+
+            <input type="text"
+                   id="editName"
+                   value="Welcome Learner"
+                   required>
+
+
+            <label>
+                Email Address
+            </label>
+
+            <input type="email"
+                   id="editEmail"
+                   value="learner@capacityconnect.com"
+                   required>
+
+
+            <div class="modal-buttons">
+
+                <button type="button"
+                        class="cancel-btn"
+                        onclick="closeProfileModal()">
+
+                    Cancel
+
+                </button>
+
+
+                <button type="submit"
+                        class="save-btn">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Save Changes
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>

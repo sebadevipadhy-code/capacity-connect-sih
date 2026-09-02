@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Features - Capacity Connect</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+    <link rel="stylesheet" href="features_page.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+
+            <div class="nav-logo">
+
+                <div class="logo"></div>
+
+            </div>
+
+
+
+            <div class="nav-link"
+                onclick="goHome()">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Home</span>
+
+            </div>
+
+
+
+            <div class="nav-link"
+                onclick="goAbout()">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>About</span>
+
+            </div>
+
+
+
+            <div class="nav-link active">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                <span>Features</span>
+
+            </div>
+
+
+
+            <button class="login-switch"
+                onclick="openLogin()">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                LOGIN
+
+            </button>
+
+
+
+            <!-- LOGIN -->
+
+            <div class="login-box" id="loginBox">
+
+
+                <button class="close-btn"
+                    onclick="closeLogin()">
+
+                    &times;
+
+                </button>
+
+
+                <div class="login-icon">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <h2>Welcome Back!</h2>
+
+                <p class="subtitle">
+                    Login to continue your learning journey
+                </p>
+
+
+                <form onsubmit="loginUser(event)">
+
+
+                    <label>Email Address</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input type="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+                    <label>Password</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input type="password"
+                            placeholder="Enter your password"
+                            required>
+
+                    </div>
+
+
+                    <div class="options">
+
+                        <label class="remember">
+
+                            <input type="checkbox">
+
+                            Remember me
+
+                        </label>
+
+
+                        <a href="#">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <button type="submit"
+                        class="login-button">
+
+                        LOGIN
+
+                    </button>
+
+
+                </form>
+
+
+                <p class="signup">
+
+                    Don't have an account?
+
+                    <a href="signup.html">
+                        Create Account
+                    </a>
+
+                </p>
+
+
+            </div>
+
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+
+        <section class="feature-hero">
+
+
+            <div class="feature-hero-content">
+
+
+                <div class="feature-badge">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    CAPACITY CONNECT FEATURES
+
+                </div>
+
+
+                <h1>
+
+                    Everything You Need
+
+                    <span>to Build Capacity.</span>
+
+                </h1>
+
+
+                <p>
+
+                    A complete digital ecosystem for
+                    organizational learning, competency
+                    development, assessment and knowledge
+                    sharing.
+
+                </p>
+
+
+                <button onclick="goHome()">
+
+                    Back to Home
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </button>
+
+
+            </div>
+
+
+            <div class="feature-hero-card">
+
+
+                <div class="mini-card">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <div>
+
+                        <strong>Learn</strong>
+
+                        <span>Structured courses</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mini-card">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                    <div>
+
+                        <strong>Develop</strong>
+
+                        <span>Build competencies</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mini-card">
+
+                    <i class="fa-solid fa-share-nodes"></i>
+
+                    <div>
+
+                        <strong>Share</strong>
+
+                        <span>Exchange knowledge</span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= FEATURES GRID ================= -->
+
+        <section class="features-section">
+
+
+            <div class="section-heading">
+
+                <div class="section-badge">
+                    CORE CAPABILITIES
+                </div>
+
+                <h2>
+                    Powerful Features. <span>One Platform.</span>
+                </h2>
+
+                <p>
+                    Capacity Connect brings the complete
+                    learning and capacity-building cycle
+                    into one centralized platform.
+                </p>
+
+            </div>
+
+
+
+            <div class="features-grid">
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <h3>
+                        Course Management
+                    </h3>
+
+                    <p>
+                        Create, organize and manage structured
+                        courses with modules, learning materials,
+                        videos and assessments.
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+
+                    <h3>
+                        Learning Paths
+                    </h3>
+
+                    <p>
+                        Guide learners through structured
+                        development journeys from foundational
+                        skills to advanced topics.
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <h3>
+                        Progress Tracking
+                    </h3>
+
+                    <p>
+                        Track course completion, learning
+                        activity, training progress and
+                        development over time.
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <h3>
+                        Skill & Competency
+                    </h3>
+
+                    <p>
+                        Maintain competency profiles and
+                        monitor the skills required for
+                        individual roles.
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+
+                    <h3>
+                        Skill-Gap Analysis
+                    </h3>
+
+                    <p>
+                        Compare current and required competency
+                        levels to identify areas where learners
+                        need further development.
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+
+                    <h3>
+                        Assessments & Quizzes
+                    </h3>
+
+                    <p>
+                        Evaluate knowledge and learning outcomes
+                        through quizzes, assessments and
+                        performance tracking.
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+
+                    <h3>
+                        Digital Certificates
+                    </h3>
+
+                    <p>
+                        Recognize successful training completion
+                        with digital certificates and achievement
+                        records.
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+
+                    <h3>
+                        Knowledge Hub
+                    </h3>
+
+                    <p>
+                        Discover and share articles, documents,
+                        videos, discussions and organizational
+                        resources.
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+
+                    <h3>
+                        Analytics & Reports
+                    </h3>
+
+                    <p>
+                        Help administrators monitor training,
+                        participation, completion and
+                        organizational learning performance.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= AI ================= -->
+
+        <section class="ai-section">
+
+
+            <div class="ai-content">
+
+
+                <div class="ai-icon">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                </div>
+
+
+                <div>
+
+                    <div class="section-badge">
+                        SMART LEARNING
+                    </div>
+
+
+                    <h2>
+                        Personalized Course
+                        <span>Recommendations</span>
+                    </h2>
+
+
+                    <p>
+
+                        Capacity Connect can use learner
+                        profiles, completed courses,
+                        assessment results, skills and
+                        competency gaps to recommend
+                        relevant learning opportunities.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= WORKFLOW ================= -->
+
+        <section class="workflow-section">
+
+
+            <div class="section-heading">
+
+                <div class="section-badge">
+                    LEARNING CYCLE
+                </div>
+
+                <h2>
+                    From Assessment to <span>Growth</span>
+                </h2>
+
+            </div>
+
+
+
+            <div class="workflow">
+
+
+                <div class="workflow-step">
+
+                    <div class="step-icon">
+                        01
+                    </div>
+
+                    <i class="fa-solid fa-clipboard-question"></i>
+
+                    <h3>
+                        Assess
+                    </h3>
+
+                    <p>
+                        Understand current knowledge and skills.
+                    </p>
+
+                </div>
+
+
+                <div class="arrow">
+                    →
+                </div>
+
+
+                <div class="workflow-step">
+
+                    <div class="step-icon">
+                        02
+                    </div>
+
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+                    <h3>
+                        Identify
+                    </h3>
+
+                    <p>
+                        Discover competency and skill gaps.
+                    </p>
+
+                </div>
+
+
+                <div class="arrow">
+                    →
+                </div>
+
+
+                <div class="workflow-step">
+
+                    <div class="step-icon">
+                        03
+                    </div>
+
+                    <i class="fa-solid fa-route"></i>
+
+                    <h3>
+                        Develop
+                    </h3>
+
+                    <p>
+                        Follow courses and learning paths.
+                    </p>
+
+                </div>
+
+
+                <div class="arrow">
+                    →
+                </div>
+
+
+                <div class="workflow-step">
+
+                    <div class="step-icon">
+                        04
+                    </div>
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <h3>
+                        Measure
+                    </h3>
+
+                    <p>
+                        Track progress and learning outcomes.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= ROLES ================= -->
+
+        <section class="roles-section">
+
+
+            <div class="section-heading">
+
+                <div class="section-badge">
+                    DESIGNED FOR EVERYONE
+                </div>
+
+                <h2>
+                    One Platform. <span>Three Roles.</span>
+                </h2>
+
+            </div>
+
+
+
+            <div class="roles-grid">
+
+
+                <div class="role-card">
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    <h3>
+                        Learners
+                    </h3>
+
+                    <p>
+                        Learn, track progress, complete
+                        assessments, develop skills and
+                        earn certificates.
+                    </p>
+
+                </div>
+
+
+
+                <div class="role-card">
+
+                    <i class="fa-solid fa-chalkboard-user"></i>
+
+                    <h3>
+                        Trainers
+                    </h3>
+
+                    <p>
+                        Create courses, manage learning
+                        materials, conduct assessments and
+                        support learners.
+                    </p>
+
+                </div>
+
+
+
+                <div class="role-card">
+
+                    <i class="fa-solid fa-user-tie"></i>
+
+                    <h3>
+                        Administrators
+                    </h3>
+
+                    <p>
+                        Manage users, training programs,
+                        reports, analytics and organizational
+                        learning activities.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div>
+
+            <strong>Capacity Connect</strong>
+
+            <span>
+                | Learn. Teach. Grow.
+            </span>
+
+        </div>
+
+
+        <p>
+            © 2026 Capacity Connect. All rights reserved.
+        </p>
+
+    </footer>
+
+
+
+    <script>
+
+        function goHome() {
+            window.location.href = "home_page.html";
+        }
+
+
+        function goAbout() {
+            window.location.href = "about_page.html";
+        }
+
+
+        function openLogin() {
+
+            document.getElementById("loginBox")
+                .classList.add("show");
+
+        }
+
+
+        function closeLogin() {
+
+            document.getElementById("loginBox")
+                .classList.remove("show");
+
+        }
+
+
+        function loginUser(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Login successful! Welcome to Capacity Connect."
+            );
+
+            closeLogin();
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Need Help - Capacity Connect</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="help_page.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <div class="navbar">
+
+            <!-- LOGO -->
+            <div class="nav-logo">
+                <div class="logo"></div>
+            </div>
+
+
+            <!-- HOME -->
+            <div class="nav-link"
+                onclick="window.location.href='home_page.html'">
+
+                <i class="fa-solid fa-house"></i>
+
+                <p>Home</p>
+
+            </div>
+
+
+            <!-- ABOUT -->
+            <div class="nav-link"
+                onclick="window.location.href='about_page.html'">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <p>About</p>
+
+            </div>
+
+
+            <!-- FEATURES -->
+            <div class="nav-link"
+                onclick="window.location.href='features_page.html'">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                <p>Features</p>
+
+            </div>
+
+
+            <!-- HELP -->
+            <div class="nav-link active">
+
+                <i class="fa-solid fa-circle-question"></i>
+
+                <p>Help</p>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="help-hero">
+
+        <div class="help-hero-icon">
+
+            <i class="fa-solid fa-headset"></i>
+
+        </div>
+
+
+        <h1>
+
+            Need <span>Help?</span>
+
+        </h1>
+
+
+        <p>
+
+            Find answers, get support and make the most
+            of your Capacity Connect learning experience.
+
+        </p>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search your question...">
+
+            <button onclick="searchHelp()">
+
+                Search
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HELP CATEGORIES ================= -->
+
+    <section class="help-section">
+
+        <h2>
+
+            How Can We <span>Help You?</span>
+
+        </h2>
+
+        <p class="section-subtitle">
+
+            Choose a category related to your problem.
+
+        </p>
+
+
+        <div class="help-grid">
+
+
+            <!-- ACCOUNT -->
+
+            <div class="help-card">
+
+                <div class="help-icon">
+
+                    <i class="fa-solid fa-user-lock"></i>
+
+                </div>
+
+                <h3>Account & Login</h3>
+
+                <p>
+
+                    Get help with account creation, login,
+                    password and profile management.
+
+                </p>
+
+                <button onclick="showHelp('Account & Login')">
+
+                    Get Help
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- COURSES -->
+
+            <div class="help-card">
+
+                <div class="help-icon">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                </div>
+
+                <h3>Courses & Learning</h3>
+
+                <p>
+
+                    Find courses, access learning materials
+                    and continue your learning journey.
+
+                </p>
+
+                <button onclick="showHelp('Courses & Learning')">
+
+                    Get Help
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- ASSESSMENTS -->
+
+            <div class="help-card">
+
+                <div class="help-icon">
+
+                    <i class="fa-solid fa-clipboard-check"></i>
+
+                </div>
+
+                <h3>Assessments</h3>
+
+                <p>
+
+                    Get support with quizzes, assessments,
+                    scores and learning outcomes.
+
+                </p>
+
+                <button onclick="showHelp('Assessments')">
+
+                    Get Help
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- SKILLS -->
+
+            <div class="help-card">
+
+                <div class="help-icon">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                </div>
+
+                <h3>Skills & Competencies</h3>
+
+                <p>
+
+                    Understand competency levels and identify
+                    areas where further skill development is needed.
+
+                </p>
+
+                <button onclick="showHelp('Skills & Competencies')">
+
+                    Get Help
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- TRAINER -->
+
+            <div class="help-card">
+
+                <div class="help-icon">
+
+                    <i class="fa-solid fa-chalkboard-user"></i>
+
+                </div>
+
+                <h3>Trainer Support</h3>
+
+                <p>
+
+                    Get guidance on creating courses,
+                    uploading resources and managing learners.
+
+                </p>
+
+                <button onclick="showHelp('Trainer Support')">
+
+                    Get Help
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- ADMIN -->
+
+            <div class="help-card">
+
+                <div class="help-icon">
+
+                    <i class="fa-solid fa-user-tie"></i>
+
+                </div>
+
+                <h3>Administrator Support</h3>
+
+                <p>
+
+                    Manage users, training programs, analytics
+                    and organizational learning activities.
+
+                </p>
+
+                <button onclick="showHelp('Administrator Support')">
+
+                    Get Help
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- CERTIFICATE -->
+
+            <div class="help-card">
+
+                <div class="help-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </div>
+
+                <h3>Certificates</h3>
+
+                <p>
+
+                    Get information about course completion,
+                    eligibility and certificates.
+
+                </p>
+
+                <button onclick="showHelp('Certificates')">
+
+                    Get Help
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- TECHNICAL -->
+
+            <div class="help-card">
+
+                <div class="help-icon">
+
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                </div>
+
+                <h3>Technical Support</h3>
+
+                <p>
+
+                    Report website problems, access issues
+                    and other technical difficulties.
+
+                </p>
+
+                <button onclick="showHelp('Technical Support')">
+
+                    Get Help
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FAQ ================= -->
+
+    <section class="faq-section">
+
+        <h2>
+
+            Frequently Asked <span>Questions</span>
+
+        </h2>
+
+
+        <div class="faq-container">
+
+
+            <div class="faq-item">
+
+                <button class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                    What is Capacity Connect?
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    Capacity Connect is a centralized digital
+                    capacity-building and learning management
+                    platform connecting learners, trainers and
+                    administrators.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                    How can I track my learning progress?
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    Learners can monitor their course completion,
+                    assessment performance, skills and overall
+                    learning progress through the dashboard.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                    Can trainers create courses?
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    Yes. Trainers can create courses, organize
+                    learning modules, upload resources and
+                    conduct assessments.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                    How does skill-gap analysis work?
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    The platform can compare required competencies
+                    with current learner skills and identify areas
+                    that require further development.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                    What can administrators manage?
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    Administrators can manage users, courses,
+                    training programs, competency information,
+                    analytics and organizational reports.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT SUPPORT ================= -->
+
+    <section class="contact-section">
+
+        <div class="contact-box">
+
+            <div>
+
+                <h2>
+
+                    Still Need Help?
+
+                </h2>
+
+                <p>
+
+                    Can't find the answer you're looking for?
+                    Contact our support team and tell us
+                    what you need.
+
+                </p>
+
+            </div>
+
+
+            <button onclick="openSupport()">
+
+                Contact Support
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SUPPORT FORM ================= -->
+
+    <section class="support-form" id="supportForm">
+
+        <div class="form-container">
+
+            <button class="close-form"
+                onclick="closeSupport()">
+
+                &times;
+
+            </button>
+
+
+            <h2>
+
+                Contact <span>Support</span>
+
+            </h2>
+
+
+            <form onsubmit="submitSupport(event)">
+
+
+                <label>Your Name</label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                    required>
+
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required>
+
+
+                <label>Issue Category</label>
+
+                <select required>
+
+                    <option value="">
+                        Select an issue
+                    </option>
+
+                    <option>Account & Login</option>
+
+                    <option>Courses & Learning</option>
+
+                    <option>Assessments</option>
+
+                    <option>Skills & Competencies</option>
+
+                    <option>Trainer Support</option>
+
+                    <option>Administrator Support</option>
+
+                    <option>Certificates</option>
+
+                    <option>Technical Support</option>
+
+                </select>
+
+
+                <label>Describe Your Issue</label>
+
+                <textarea
+                    placeholder="Describe your problem..."
+                    required></textarea>
+
+
+                <button type="submit">
+
+                    Submit Request
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>Capacity Connect</h3>
+
+        <p>
+
+            Learn. Teach. Grow. Build Capacity.
+
+        </p>
+
+        <small>
+
+            © 2026 Capacity Connect
+
+        </small>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="help_page.js"></script>
+
+</body>
+
+</html>

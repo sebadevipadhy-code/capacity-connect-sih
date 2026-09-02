@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Select Your Role - Capacity Connect</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="./role-selection.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="top-header">
+
+        <div class="brand">
+
+            <div class="brand-logo"></div>
+
+            <div class="brand-text">
+
+                <strong>Capacity Connect</strong>
+
+                <span>Learn. Teach. Grow.</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- HOME BUTTON -->
+
+        <button class="home-button"
+                type="button"
+                onclick="goHome()">
+
+            <i class="fa-solid fa-house"></i>
+
+            Home
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN ROLE SELECTION
+    ====================================================== -->
+
+    <main class="role-page">
+
+
+        <!-- HEADING -->
+
+        <div class="role-heading">
+
+            <div class="heading-icon">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+
+            <h1>
+                Choose Your Role
+            </h1>
+
+
+            <p>
+                Select how you want to use Capacity Connect
+                and continue to your personalized experience.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ROLE CARDS
+        ================================================== -->
+
+        <section class="role-container">
+
+
+
+            <!-- =================================================
+                 LEARNER
+            ================================================== -->
+
+            <!-- ================= LEARNER ================= -->
+
+<div class="role-card learner-card">
+
+    <div class="role-icon">
+
+        <i class="fa-solid fa-graduation-cap"></i>
+
+    </div>
+
+    <h2>Learner</h2>
+
+    <p>
+        Learn new skills, access courses,
+        complete assessments and track your
+        learning progress.
+    </p>
+
+    <div class="role-features">
+
+        <span>
+            <i class="fa-solid fa-check"></i>
+            Access courses
+        </span>
+
+        <span>
+            <i class="fa-solid fa-check"></i>
+            Track progress
+        </span>
+
+        <span>
+            <i class="fa-solid fa-check"></i>
+            Complete assessments
+        </span>
+
+        <span>
+            <i class="fa-solid fa-check"></i>
+            Develop skills
+        </span>
+
+    </div>
+
+    <button
+        class="role-button"
+        type="button"
+        onclick="selectLearner()">
+
+        Continue as Learner
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </button>
+
+</div>
+
+
+
+            <!-- =================================================
+                 TRAINER
+            ================================================== -->
+
+            <div class="role-card trainer-card">
+
+
+                <div class="role-icon">
+
+                    <i class="fa-solid fa-chalkboard-user"></i>
+
+                </div>
+
+
+                <h2>
+                    Trainer
+                </h2>
+
+
+                <p>
+                    Create and manage training content,
+                    support learners and monitor training
+                    activities.
+                </p>
+
+
+                <div class="role-features">
+
+
+                    <span>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Create courses
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Manage learning content
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Monitor learners
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Create assessments
+
+                    </span>
+
+
+                </div>
+
+
+                <!-- TRAINER BUTTON -->
+
+                <button class="role-button"
+                        type="button"
+                        onclick="selectTrainer()">
+
+                    Continue as Trainer
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ADMIN
+            ================================================== -->
+
+            <div class="role-card admin-card">
+
+
+                <div class="role-icon">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                </div>
+
+
+                <h2>
+                    Admin
+                </h2>
+
+
+                <p>
+                    Manage users, courses, training activities
+                    and the overall Capacity Connect platform.
+                </p>
+
+
+                <div class="role-features">
+
+
+                    <span>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Manage users
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Manage courses
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Monitor platform activity
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Manage system settings
+
+                    </span>
+
+
+                </div>
+
+
+                <!-- ADMIN BUTTON -->
+
+                <button class="role-button"
+                        type="button"
+                        onclick="selectAdmin()">
+
+                    Continue as Admin
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             NOTE
+        ================================================== -->
+
+        <p class="role-note">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            You can access features based on the role
+            you select.
+
+        </p>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <span>
+            © 2026 Capacity Connect
+        </span>
+
+
+        <span>
+            Learn. Teach. Grow.
+        </span>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+
+         IMPORTANT:
+         Your actual file is role-section.js
+    ====================================================== -->
+
+    <script src="./role-section.js"></script>
+
+
+</body>
+
+</html>

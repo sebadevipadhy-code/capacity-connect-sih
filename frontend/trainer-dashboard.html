@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Trainer Dashboard - Capacity Connect</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+    <!-- Trainer CSS -->
+    <link rel="stylesheet"
+          href="trainer-dashboard.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo"></div>
+
+            <div>
+
+                <strong>Capacity Connect</strong>
+
+                <span>Trainer Portal</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+
+            <button class="nav-item active"
+                    onclick="showSection('overview', this)">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <span>Overview</span>
+
+            </button>
+
+
+            <button class="nav-item"
+                    onclick="showSection('profile', this)">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>Profile</span>
+
+            </button>
+
+
+            <button class="nav-item"
+                    onclick="showSection('videos', this)">
+
+                <i class="fa-solid fa-video"></i>
+
+                <span>Video Lectures</span>
+
+            </button>
+
+
+            <button class="nav-item"
+                    onclick="showSection('materials', this)">
+
+                <i class="fa-solid fa-file-arrow-up"></i>
+
+                <span>Learning Material</span>
+
+            </button>
+
+
+            <button class="nav-item"
+                    onclick="showSection('questions', this)">
+
+                <i class="fa-solid fa-circle-question"></i>
+
+                <span>Questions / MCQs</span>
+
+            </button>
+
+
+            <button class="nav-item"
+                    onclick="showSection('performance', this)">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>Learner Performance</span>
+
+            </button>
+
+
+        </nav>
+
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+
+            <button class="back-button"
+                    onclick="goToRoles()">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Roles
+
+            </button>
+
+
+            <button class="logout-button"
+                    onclick="logoutTrainer()">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                <h1 id="pageTitle">
+                    Trainer Dashboard
+                </h1>
+
+                <p id="pageSubtitle">
+                    Manage your learning activities and learners.
+                </p>
+
+            </div>
+
+
+            <div class="trainer-mini-profile">
+
+                <div class="mini-avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <div>
+
+                    <strong id="topTrainerName">
+                        Trainer
+                    </strong>
+
+                    <span>
+                        Trainer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =====================================================
+             OVERVIEW
+        ====================================================== -->
+
+        <section id="overview"
+                 class="dashboard-section active-section">
+
+
+            <div class="welcome-box">
+
+                <div>
+
+                    <span class="welcome-small">
+                        Welcome back
+                    </span>
+
+                    <h2>
+                        Trainer Dashboard
+                    </h2>
+
+                    <p>
+                        Create learning content, conduct assessments
+                        and monitor your learners' progress.
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-chalkboard-user"></i>
+
+            </div>
+
+
+
+            <!-- STATISTICS -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Total Learners</span>
+
+                        <strong>128</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+
+                        <i class="fa-solid fa-video"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Video Lectures</span>
+
+                        <strong id="videoCount">0</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Learning Materials</span>
+
+                        <strong id="materialCount">0</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+
+                        <i class="fa-solid fa-circle-question"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Questions</span>
+
+                        <strong id="questionCount">0</strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="content-card">
+
+                <div class="section-title">
+
+                    <div>
+
+                        <h3>Quick Actions</h3>
+
+                        <p>
+                            Start managing your training activities.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+
+                    <button onclick="openSectionFromAction('videos')">
+
+                        <i class="fa-solid fa-video"></i>
+
+                        <span>
+                            Add Video Lecture
+                        </span>
+
+                    </button>
+
+
+                    <button onclick="openSectionFromAction('materials')">
+
+                        <i class="fa-solid fa-upload"></i>
+
+                        <span>
+                            Upload Material
+                        </span>
+
+                    </button>
+
+
+                    <button onclick="openSectionFromAction('questions')">
+
+                        <i class="fa-solid fa-pen-to-square"></i>
+
+                        <span>
+                            Create MCQ
+                        </span>
+
+                    </button>
+
+
+                    <button onclick="openSectionFromAction('performance')">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <span>
+                            View Performance
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PROFILE
+        ====================================================== -->
+
+        <section id="profile"
+                 class="dashboard-section">
+
+
+            <div class="content-card">
+
+
+                <div class="section-title">
+
+                    <div>
+
+                        <h2>Trainer Profile</h2>
+
+                        <p>
+                            Manage your trainer information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-area">
+
+
+                    <div class="profile-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="profile-info">
+
+                        <h3 id="profileName">
+                            Trainer
+                        </h3>
+
+                        <p>
+                            Trainer | Capacity Connect
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <form id="profileForm"
+                      onsubmit="saveProfile(event)">
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Full Name
+                            </label>
+
+                            <input type="text"
+                                   id="trainerName"
+                                   placeholder="Enter your name"
+                                   required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Email Address
+                            </label>
+
+                            <input type="email"
+                                   id="trainerEmail"
+                                   placeholder="Enter your email"
+                                   required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Specialization
+                            </label>
+
+                            <input type="text"
+                                   id="trainerSpecialization"
+                                   placeholder="e.g. Web Development">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Experience
+                            </label>
+
+                            <input type="text"
+                                   id="trainerExperience"
+                                   placeholder="e.g. 5 years">
+
+                        </div>
+
+
+                    </div>
+
+
+                    <button class="primary-button"
+                            type="submit">
+
+                        <i class="fa-solid fa-save"></i>
+
+                        Save Profile
+
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             VIDEO LECTURES
+        ====================================================== -->
+
+        <section id="videos"
+                 class="dashboard-section">
+
+
+            <div class="content-card">
+
+
+                <div class="section-title">
+
+                    <div>
+
+                        <h2>Video Lectures</h2>
+
+                        <p>
+                            Add video lectures for your learners.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="videoForm"
+                      onsubmit="addVideo(event)">
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Lecture Title
+                            </label>
+
+                            <input type="text"
+                                   id="videoTitle"
+                                   placeholder="Enter lecture title"
+                                   required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Video URL
+                            </label>
+
+                            <input type="url"
+                                   id="videoUrl"
+                                   placeholder="https://example.com/video"
+                                   required>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <button class="primary-button"
+                            type="submit">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Video Lecture
+
+                    </button>
+
+
+                </form>
+
+
+                <div id="videoList"
+                     class="item-list">
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             LEARNING MATERIAL
+        ====================================================== -->
+
+        <section id="materials"
+                 class="dashboard-section">
+
+
+            <div class="content-card">
+
+
+                <div class="section-title">
+
+                    <div>
+
+                        <h2>Learning Material</h2>
+
+                        <p>
+                            Upload PDFs, documents and other learning resources.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="materialForm"
+                      onsubmit="addMaterial(event)">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Material Title
+                        </label>
+
+                        <input type="text"
+                               id="materialTitle"
+                               placeholder="Enter material title"
+                               required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Select File
+                        </label>
+
+                        <input type="file"
+                               id="materialFile"
+                               required>
+
+                    </div>
+
+
+                    <button class="primary-button"
+                            type="submit">
+
+                        <i class="fa-solid fa-upload"></i>
+
+                        Upload Material
+
+                    </button>
+
+
+                </form>
+
+
+                <div id="materialList"
+                     class="item-list">
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             QUESTIONS / MCQS
+        ====================================================== -->
+
+        <section id="questions"
+                 class="dashboard-section">
+
+
+            <div class="content-card">
+
+
+                <div class="section-title">
+
+                    <div>
+
+                        <h2>Create Questions / MCQs</h2>
+
+                        <p>
+                            Create multiple-choice questions for learners.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="questionForm"
+                      onsubmit="addQuestion(event)">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Question
+                        </label>
+
+                        <textarea id="questionText"
+                                  placeholder="Enter your question..."
+                                  required></textarea>
+
+                    </div>
+
+
+                    <div class="options-grid">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Option A
+                            </label>
+
+                            <input type="text"
+                                   id="optionA"
+                                   placeholder="Option A"
+                                   required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Option B
+                            </label>
+
+                            <input type="text"
+                                   id="optionB"
+                                   placeholder="Option B"
+                                   required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Option C
+                            </label>
+
+                            <input type="text"
+                                   id="optionC"
+                                   placeholder="Option C"
+                                   required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Option D
+                            </label>
+
+                            <input type="text"
+                                   id="optionD"
+                                   placeholder="Option D"
+                                   required>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Correct Answer
+                        </label>
+
+                        <select id="correctAnswer"
+                                required>
+
+                            <option value="">
+                                Select correct answer
+                            </option>
+
+                            <option value="A">
+                                Option A
+                            </option>
+
+                            <option value="B">
+                                Option B
+                            </option>
+
+                            <option value="C">
+                                Option C
+                            </option>
+
+                            <option value="D">
+                                Option D
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button class="primary-button"
+                            type="submit">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Create Question
+
+                    </button>
+
+
+                </form>
+
+
+                <div id="questionList"
+                     class="item-list">
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             LEARNER PERFORMANCE
+        ====================================================== -->
+
+        <section id="performance"
+                 class="dashboard-section">
+
+
+            <div class="content-card">
+
+
+                <div class="section-title">
+
+                    <div>
+
+                        <h2>Learner Performance</h2>
+
+                        <p>
+                            Monitor learner progress and assessment results.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="performance-table-wrapper">
+
+
+                    <table class="performance-table">
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Learner
+                                </th>
+
+                                <th>
+                                    Course
+                                </th>
+
+                                <th>
+                                    Progress
+                                </th>
+
+                                <th>
+                                    Assessment
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>
+                                    Rahul Sharma
+                                </td>
+
+                                <td>
+                                    Web Development
+                                </td>
+
+                                <td>
+
+                                    <div class="progress-wrapper">
+
+                                        <div class="progress-bar">
+
+                                            <span style="width: 85%;"></span>
+
+                                        </div>
+
+                                        <small>
+                                            85%
+                                        </small>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    92%
+                                </td>
+
+                                <td>
+
+                                    <span class="status completed">
+                                        Excellent
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Priya Singh
+                                </td>
+
+                                <td>
+                                    Digital Skills
+                                </td>
+
+                                <td>
+
+                                    <div class="progress-wrapper">
+
+                                        <div class="progress-bar">
+
+                                            <span style="width: 72%;"></span>
+
+                                        </div>
+
+                                        <small>
+                                            72%
+                                        </small>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    78%
+                                </td>
+
+                                <td>
+
+                                    <span class="status progress">
+                                        In Progress
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Aman Kumar
+                                </td>
+
+                                <td>
+                                    Computer Basics
+                                </td>
+
+                                <td>
+
+                                    <div class="progress-wrapper">
+
+                                        <div class="progress-bar">
+
+                                            <span style="width: 55%;"></span>
+
+                                        </div>
+
+                                        <small>
+                                            55%
+                                        </small>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    61%
+                                </td>
+
+                                <td>
+
+                                    <span class="status attention">
+                                        Needs Attention
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Sneha Patel
+                                </td>
+
+                                <td>
+                                    Communication Skills
+                                </td>
+
+                                <td>
+
+                                    <div class="progress-wrapper">
+
+                                        <div class="progress-bar">
+
+                                            <span style="width: 94%;"></span>
+
+                                        </div>
+
+                                        <small>
+                                            94%
+                                        </small>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    96%
+                                </td>
+
+                                <td>
+
+                                    <span class="status completed">
+                                        Excellent
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="trainer-dashboard.js"></script>
+
+
+</body>
+
+</html>

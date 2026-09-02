@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About - Capacity Connect</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+    <link rel="stylesheet" href="about_page.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+
+            <!-- LOGO -->
+
+            <div class="nav-logo">
+
+                <div class="logo"></div>
+
+            </div>
+
+
+
+            <!-- HOME -->
+
+            <div class="nav-link"
+                onclick="goHome()">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Home</span>
+
+            </div>
+
+
+
+            <!-- ABOUT -->
+
+            <div class="nav-link active">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>About</span>
+
+            </div>
+
+
+
+            <!-- FEATURES -->
+
+            <div class="nav-link"
+                onclick="goFeatures()">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                <span>Features</span>
+
+            </div>
+
+
+
+            <!-- LOGIN -->
+
+            <button class="login-switch"
+                onclick="openLogin()">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                LOGIN
+
+            </button>
+
+
+
+            <!-- LOGIN BOX -->
+
+            <div class="login-box" id="loginBox">
+
+
+                <button class="close-btn"
+                    onclick="closeLogin()">
+
+                    &times;
+
+                </button>
+
+
+                <div class="login-icon">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <h2>Welcome Back!</h2>
+
+                <p class="subtitle">
+                    Login to continue your learning journey
+                </p>
+
+
+                <form onsubmit="loginUser(event)">
+
+
+                    <label>Email Address</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input type="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+
+                    <label>Password</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input type="password"
+                            placeholder="Enter your password"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="options">
+
+                        <label class="remember">
+
+                            <input type="checkbox">
+
+                            Remember me
+
+                        </label>
+
+
+                        <a href="#">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+
+                    <button type="submit"
+                        class="login-button">
+
+                        LOGIN
+
+                    </button>
+
+
+                </form>
+
+
+
+                <p class="signup">
+
+                    Don't have an account?
+
+                    <a href="signup.html">
+                        Create Account
+                    </a>
+
+                </p>
+
+
+            </div>
+
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= ABOUT HERO ================= -->
+
+    <main>
+
+
+        <section class="about-hero">
+
+
+            <div class="about-content">
+
+
+                <div class="about-badge">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    ABOUT CAPACITY CONNECT
+
+                </div>
+
+
+                <h1>
+
+                    Building Skills.
+
+                    <span>Connecting Knowledge.</span>
+
+                </h1>
+
+
+                <p>
+
+                    Capacity Connect is a centralized digital
+                    capacity-building and learning management
+                    platform designed to help organizations
+                    train people, develop competencies and
+                    share knowledge.
+
+                </p>
+
+
+                <p>
+
+                    It brings <strong>learners, trainers and
+                    administrators</strong> together in one
+                    connected learning environment.
+
+                </p>
+
+
+                <div class="about-buttons">
+
+                    <button onclick="goFeatures()">
+
+                        Explore Features
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                    <button class="outline"
+                        onclick="goHome()">
+
+                        Back to Home
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RIGHT CARD -->
+
+            <div class="about-visual">
+
+
+                <div class="visual-glow"></div>
+
+
+                <div class="connect-card">
+
+
+                    <div class="connect-icon">
+
+                        <i class="fa-solid fa-network-wired"></i>
+
+                    </div>
+
+
+                    <h2>
+                        One Connected Platform
+                    </h2>
+
+
+                    <p>
+                        Learn • Develop • Share • Grow
+                    </p>
+
+
+                    <div class="connection">
+
+
+                        <div class="connection-item">
+
+                            <i class="fa-solid fa-user-graduate"></i>
+
+                            <span>Learners</span>
+
+                        </div>
+
+
+                        <div class="connection-line"></div>
+
+
+                        <div class="connection-item">
+
+                            <i class="fa-solid fa-chalkboard-user"></i>
+
+                            <span>Trainers</span>
+
+                        </div>
+
+
+                        <div class="connection-line"></div>
+
+
+                        <div class="connection-item">
+
+                            <i class="fa-solid fa-user-tie"></i>
+
+                            <span>Admins</span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= PURPOSE ================= -->
+
+        <section class="purpose-section">
+
+
+            <div class="section-heading">
+
+                <div class="section-badge">
+                    OUR PURPOSE
+                </div>
+
+                <h2>
+                    Why <span>Capacity Connect?</span>
+                </h2>
+
+                <p>
+                    Organizations need more than individual
+                    training sessions. They need a continuous
+                    system for learning, competency development
+                    and knowledge sharing.
+                </p>
+
+            </div>
+
+
+
+            <div class="purpose-grid">
+
+
+                <div class="purpose-card">
+
+                    <div class="purpose-icon">
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                    </div>
+
+                    <h3>
+                        Continuous Learning
+                    </h3>
+
+                    <p>
+                        Provide employees with structured
+                        courses, learning resources and
+                        personalized learning opportunities.
+                    </p>
+
+                </div>
+
+
+
+                <div class="purpose-card">
+
+                    <div class="purpose-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <h3>
+                        Competency Development
+                    </h3>
+
+                    <p>
+                        Track skills, identify competency gaps
+                        and help learners improve the capabilities
+                        required for their roles.
+                    </p>
+
+                </div>
+
+
+
+                <div class="purpose-card">
+
+                    <div class="purpose-icon">
+
+                        <i class="fa-solid fa-share-nodes"></i>
+
+                    </div>
+
+                    <h3>
+                        Knowledge Sharing
+                    </h3>
+
+                    <p>
+                        Create a centralized space where people
+                        can discover, contribute and exchange
+                        useful organizational knowledge.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= WHAT WE CONNECT ================= -->
+
+        <section class="connect-section">
+
+
+            <div class="section-heading">
+
+                <div class="section-badge">
+                    THE ECOSYSTEM
+                </div>
+
+                <h2>
+                    Everything Connected in <span>One Place</span>
+                </h2>
+
+            </div>
+
+
+
+            <div class="ecosystem">
+
+
+                <div class="eco-card">
+
+                    <div class="eco-number">
+                        01
+                    </div>
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <h3>
+                        Learning
+                    </h3>
+
+                    <p>
+                        Courses, learning paths, resources
+                        and training programs.
+                    </p>
+
+                </div>
+
+
+
+                <div class="eco-card">
+
+                    <div class="eco-number">
+                        02
+                    </div>
+
+                    <i class="fa-solid fa-brain"></i>
+
+                    <h3>
+                        Skills
+                    </h3>
+
+                    <p>
+                        Competency profiles, skill tracking
+                        and skill-gap analysis.
+                    </p>
+
+                </div>
+
+
+
+                <div class="eco-card">
+
+                    <div class="eco-number">
+                        03
+                    </div>
+
+                    <i class="fa-solid fa-clipboard-check"></i>
+
+                    <h3>
+                        Assessment
+                    </h3>
+
+                    <p>
+                        Quizzes, assessments and measurable
+                        learning outcomes.
+                    </p>
+
+                </div>
+
+
+
+                <div class="eco-card">
+
+                    <div class="eco-number">
+                        04
+                    </div>
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                    <h3>
+                        Knowledge
+                    </h3>
+
+                    <p>
+                        Articles, documents, videos,
+                        discussions and shared resources.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= VISION ================= -->
+
+        <section class="vision-section">
+
+
+            <div class="vision-box">
+
+
+                <div class="vision-icon">
+
+                    <i class="fa-solid fa-rocket"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Our Vision
+                    </h2>
+
+                    <p>
+
+                        To create a connected learning ecosystem
+                        where every learner can identify their
+                        development needs, access the right
+                        learning opportunities, build relevant
+                        competencies and contribute knowledge back
+                        to the organization.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div>
+
+            <strong>Capacity Connect</strong>
+
+            <span>
+                | Learn. Teach. Grow.
+            </span>
+
+        </div>
+
+
+        <p>
+            © 2026 Capacity Connect. All rights reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function goHome() {
+            window.location.href = "home_page.html";
+        }
+
+
+        function goFeatures() {
+            window.location.href = "features_page.html";
+        }
+
+
+        function openLogin() {
+            document.getElementById("loginBox")
+                .classList.add("show");
+        }
+
+
+        function closeLogin() {
+            document.getElementById("loginBox")
+                .classList.remove("show");
+        }
+
+
+        function loginUser(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Login successful! Welcome to Capacity Connect."
+            );
+
+            closeLogin();
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

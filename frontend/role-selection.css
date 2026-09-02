@@ -1,0 +1,613 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(23, 105, 224, 0.10),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #f7f9ff,
+            #ffffff
+        );
+
+    color: #14213d;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+/* ================= HEADER ================= */
+
+.top-header {
+
+    height: 72px;
+
+    padding: 0 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid #e8ecf5;
+
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.05);
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.brand-logo {
+
+    width: 45px;
+
+    height: 45px;
+
+    background-image:
+        url("logo.png");
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+}
+
+
+.brand-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.brand-text strong {
+
+    font-size: 16px;
+
+    color: #14213d;
+
+}
+
+
+.brand-text span {
+
+    margin-top: 3px;
+
+    font-size: 10px;
+
+    color: #98a2b3;
+
+}
+
+
+.home-button {
+
+    border: 1px solid #d9deea;
+
+    background: white;
+
+    color: #344054;
+
+    padding: 10px 18px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.home-button i {
+
+    margin-right: 6px;
+
+}
+
+
+.home-button:hover {
+
+    border-color: #1769e0;
+
+    color: #1769e0;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ================= MAIN ================= */
+
+.role-page {
+
+    flex: 1;
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 60px 0;
+
+}
+
+
+/* ================= HEADING ================= */
+
+.role-heading {
+
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: 0 auto 45px;
+
+}
+
+
+.heading-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eef4ff;
+
+    color: #1769e0;
+
+    font-size: 22px;
+
+}
+
+
+.role-heading h1 {
+
+    font-size: 38px;
+
+    margin-bottom: 12px;
+
+    letter-spacing: -1px;
+
+}
+
+
+.role-heading p {
+
+    color: #667085;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ================= CARDS ================= */
+
+.role-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+}
+
+
+/* CARD */
+
+.role-card {
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid #e5e9f2;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s;
+
+}
+
+
+.role-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 40px rgba(23, 105, 224, 0.12);
+
+    border-color: #cbdcff;
+
+}
+
+
+/* ICON */
+
+.role-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    background: #eef4ff;
+
+    color: #1769e0;
+
+    font-size: 25px;
+
+}
+
+
+.trainer-card .role-icon {
+
+    background: #f1edff;
+
+    color: #713cff;
+
+}
+
+
+.admin-card .role-icon {
+
+    background: #eaf9f0;
+
+    color: #16a34a;
+
+}
+
+
+/* TITLE */
+
+.role-card h2 {
+
+    font-size: 23px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.role-card p {
+
+    color: #667085;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    min-height: 68px;
+
+}
+
+
+/* FEATURES */
+
+.role-features {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+
+    margin: 22px 0 28px;
+
+}
+
+
+.role-features span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #475467;
+
+    font-size: 12px;
+
+}
+
+
+.role-features i {
+
+    width: 18px;
+
+    height: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eaf9f0;
+
+    color: #16a34a;
+
+    font-size: 9px;
+
+}
+
+
+/* BUTTON */
+
+.role-button {
+
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 13px 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #1769e0;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.role-button:hover {
+
+    background: #0f55bd;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(23, 105, 224, 0.22);
+
+}
+
+
+.trainer-card .role-button {
+
+    background: #713cff;
+
+}
+
+
+.trainer-card .role-button:hover {
+
+    background: #5b2fd0;
+
+}
+
+
+.admin-card .role-button {
+
+    background: #16a34a;
+
+}
+
+
+.admin-card .role-button:hover {
+
+    background: #12833b;
+
+}
+
+
+.role-button i {
+
+    margin-left: 7px;
+
+}
+
+
+/* NOTE */
+
+.role-note {
+
+    text-align: center;
+
+    color: #98a2b3;
+
+    font-size: 11px;
+
+    margin-top: 30px;
+
+}
+
+
+.role-note i {
+
+    color: #1769e0;
+
+    margin-right: 4px;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    padding: 20px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    background: #0b0f19;
+
+    color: #667085;
+
+    font-size: 11px;
+
+}
+
+
+/* ================= TABLET ================= */
+
+@media(max-width: 900px) {
+
+    .role-container {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .role-card:last-child {
+
+        grid-column:
+            1 / -1;
+
+        max-width: 450px;
+
+        width: 100%;
+
+        margin: auto;
+
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 600px) {
+
+    .top-header {
+
+        padding: 0 20px;
+
+    }
+
+    .brand-text {
+
+        display: none;
+
+    }
+
+    .role-page {
+
+        width: 90%;
+
+        padding: 40px 0;
+
+    }
+
+    .role-heading h1 {
+
+        font-size: 30px;
+
+    }
+
+    .role-heading p {
+
+        font-size: 13px;
+
+    }
+
+    .role-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .role-card:last-child {
+
+        grid-column: auto;
+
+        max-width: none;
+
+    }
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 7px;
+
+        text-align: center;
+
+    }
+
+}

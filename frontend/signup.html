@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Capacity Connect</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+    <!-- Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client"
+        async
+        defer></script>
+
+    <!-- Signup CSS -->
+    <link rel="stylesheet"
+        href="signup.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BACK TO HOME
+    ========================== -->
+
+    <button class="back-home"
+        onclick="goHome()">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Back to Home
+
+    </button>
+
+
+
+    <!-- =========================
+         SIGNUP CONTAINER
+    ========================== -->
+
+    <main class="signup-page">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="signup-info">
+
+            <div class="brand-logo">
+
+                <img src="logo.png"
+                    alt="Capacity Connect Logo">
+
+            </div>
+
+
+            <h1>
+                Start Your
+                <span>Learning Journey.</span>
+            </h1>
+
+
+            <p>
+                Create your Capacity Connect account
+                and access courses, skill development,
+                assessments and learning resources.
+            </p>
+
+
+            <div class="signup-benefits">
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>Access Courses</strong>
+
+                        <span>
+                            Discover training and learning
+                            programs.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>Track Progress</strong>
+
+                        <span>
+                            Monitor your learning and
+                            skill development.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+
+                        <i class="fa-solid fa-certificate"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>Earn Certificates</strong>
+
+                        <span>
+                            Receive certificates after
+                            completing eligible courses.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================
+             SIGNUP FORM
+        ========================== -->
+
+        <div class="signup-card">
+
+
+            <div class="signup-header">
+
+                <div class="signup-icon">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                </div>
+
+
+                <h2>
+                    Create Account
+                </h2>
+
+
+                <p>
+                    Join Capacity Connect today
+                </p>
+
+            </div>
+
+
+
+            <!-- SIGNUP FORM -->
+
+            <form id="signupForm"
+                onsubmit="createAccount(event)">
+
+
+                <!-- FULL NAME -->
+
+                <label>
+                    Full Name
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <label>
+                    Email Address
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+
+
+                <!-- ROLE -->
+
+                <label>
+                    Account Type
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <select id="role"
+                        required>
+
+                        <option value="">
+                            Select your role
+                        </option>
+
+                        <option value="learner">
+                            Learner
+                        </option>
+
+                        <option value="trainer">
+                            Trainer
+                        </option>
+
+                        <option value="admin">
+                            Administrator
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- ORGANIZATION -->
+
+                <label>
+                    Organization / Institution
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    <input
+                        type="text"
+                        id="organization"
+                        placeholder="Enter organization name"
+                        required>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <label>
+                    Password
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create a password"
+                        required>
+
+                    <button type="button"
+                        class="password-toggle"
+                        onclick="togglePassword('password', this)">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <label>
+                    Confirm Password
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        required>
+
+                    <button type="button"
+                        class="password-toggle"
+                        onclick="togglePassword('confirmPassword', this)">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- TERMS -->
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required>
+
+                    <span>
+                        I agree to the
+                        <a href="#">
+                            Terms & Conditions
+                        </a>
+                        and
+                        <a href="#">
+                            Privacy Policy
+                        </a>.
+                    </span>
+
+                </label>
+
+
+
+                <!-- CREATE ACCOUNT -->
+
+                <button
+                    type="submit"
+                    class="create-account-btn">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    CREATE ACCOUNT
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- GOOGLE -->
+
+            <div class="divider">
+
+                <span>OR</span>
+
+            </div>
+
+
+            <div id="g_id_onload"
+
+                data-client_id="YOUR_GOOGLE_CLIENT_ID"
+
+                data-callback="handleGoogleSignup"
+
+                data-auto_prompt="false">
+
+            </div>
+
+
+            <div class="g_id_signin"
+
+                data-type="standard"
+
+                data-size="large"
+
+                data-theme="outline"
+
+                data-text="signup_with"
+
+                data-shape="rectangular"
+
+                data-logo_alignment="left"
+
+                data-width="320">
+
+            </div>
+
+
+
+            <!-- LOGIN -->
+
+            <p class="login-text">
+
+                Already have an account?
+
+                <a href="home_page.html"
+                    onclick="openLoginFromSignup(event)">
+
+                    Login
+
+                </a>
+
+            </p>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="signup.js"></script>
+
+
+</body>
+
+</html>

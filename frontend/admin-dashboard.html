@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - Capacity Connect</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="admin-dashboard.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="sidebar-brand">
+
+        <div class="brand-logo"></div>
+
+        <div class="brand-text">
+
+            <strong>Capacity Connect</strong>
+
+            <span>Admin Portal</span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <button class="nav-item active"
+                onclick="showSection('overview', this)">
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            <span>Overview</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showSection('approval', this)">
+
+            <i class="fa-solid fa-user-check"></i>
+
+            <span>User Approval</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showSection('users', this)">
+
+            <i class="fa-solid fa-users-gear"></i>
+
+            <span>User / Role Management</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showSection('courses', this)">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <span>Course Monitoring</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showSection('assessment', this)">
+
+            <i class="fa-solid fa-clipboard-check"></i>
+
+            <span>Assessment Statistics</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showSection('certification', this)">
+
+            <i class="fa-solid fa-certificate"></i>
+
+            <span>Certification Statistics</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showSection('participation', this)">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>Participation Analytics</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showSection('announcements', this)">
+
+            <i class="fa-solid fa-bullhorn"></i>
+
+            <span>Announcements</span>
+
+        </button>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <button onclick="goHome()">
+
+            <i class="fa-solid fa-house"></i>
+
+            Back to Home
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main-content">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h1>Admin Dashboard</h1>
+
+            <p>
+                Manage and monitor Capacity Connect
+            </p>
+
+        </div>
+
+
+        <div class="admin-profile">
+
+            <div class="admin-avatar">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+            </div>
+
+            <div>
+
+                <strong>Administrator</strong>
+
+                <span>System Admin</span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= OVERVIEW ================= -->
+
+    <section id="overview"
+             class="dashboard-section active-section">
+
+        <div class="section-title">
+
+            <h2>Platform Overview</h2>
+
+            <p>
+                Monitor the overall activity of the platform.
+            </p>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Total Users</span>
+
+                    <strong id="totalUsers">1,248</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+
+                    <i class="fa-solid fa-book"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Total Courses</span>
+
+                    <strong id="totalCourses">86</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Certificates</span>
+
+                    <strong>524</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Pending Approvals</span>
+
+                    <strong id="pendingCount">12</strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="dashboard-grid">
+
+            <div class="panel">
+
+                <h3>Recent Platform Activity</h3>
+
+                <ul class="activity-list">
+
+                    <li>
+                        <i class="fa-solid fa-user-plus"></i>
+                        New learner registration
+                        <span>10 min ago</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-book"></i>
+                        New course submitted
+                        <span>35 min ago</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-certificate"></i>
+                        Certificate issued
+                        <span>1 hour ago</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-user-check"></i>
+                        User approved
+                        <span>2 hours ago</span>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h3>System Status</h3>
+
+                <div class="status-row">
+
+                    <span>Platform</span>
+
+                    <strong class="online">
+                        ● Online
+                    </strong>
+
+                </div>
+
+                <div class="status-row">
+
+                    <span>Learning System</span>
+
+                    <strong class="online">
+                        ● Active
+                    </strong>
+
+                </div>
+
+                <div class="status-row">
+
+                    <span>Assessment System</span>
+
+                    <strong class="online">
+                        ● Active
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= USER APPROVAL ================= -->
+
+    <section id="approval"
+             class="dashboard-section">
+
+        <div class="section-title">
+
+            <h2>User Approval</h2>
+
+            <p>
+                Review and approve new user registrations.
+            </p>
+
+        </div>
+
+
+        <div class="panel">
+
+            <div class="table-header">
+
+                <h3>Pending Users</h3>
+
+                <span class="badge">
+                    12 Pending
+                </span>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Requested Role</th>
+                            <th>Status</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="approvalTable">
+
+                        <tr>
+
+                            <td>Rahul Kumar</td>
+
+                            <td>rahul@example.com</td>
+
+                            <td>Learner</td>
+
+                            <td>
+                                <span class="status pending">
+                                    Pending
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button class="approve-btn"
+                                        onclick="approveUser(this)">
+
+                                    Approve
+
+                                </button>
+
+                                <button class="reject-btn"
+                                        onclick="rejectUser(this)">
+
+                                    Reject
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Priya Sharma</td>
+
+                            <td>priya@example.com</td>
+
+                            <td>Trainer</td>
+
+                            <td>
+                                <span class="status pending">
+                                    Pending
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button class="approve-btn"
+                                        onclick="approveUser(this)">
+
+                                    Approve
+
+                                </button>
+
+                                <button class="reject-btn"
+                                        onclick="rejectUser(this)">
+
+                                    Reject
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= USER MANAGEMENT ================= -->
+
+    <section id="users"
+             class="dashboard-section">
+
+        <div class="section-title">
+
+            <h2>User / Role Management</h2>
+
+            <p>
+                Manage platform users and their assigned roles.
+            </p>
+
+        </div>
+
+
+        <div class="panel">
+
+            <div class="table-header">
+
+                <h3>Registered Users</h3>
+
+                <input type="text"
+                       id="userSearch"
+                       placeholder="Search users..."
+                       onkeyup="searchUsers()">
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table id="userTable">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Amit Singh</td>
+                            <td>amit@example.com</td>
+
+                            <td>
+                                <select>
+                                    <option>Learner</option>
+                                    <option>Trainer</option>
+                                    <option>Admin</option>
+                                </select>
+                            </td>
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="manage-btn"
+                                        onclick="saveRole(this)">
+                                    Save
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Neha Patel</td>
+                            <td>neha@example.com</td>
+
+                            <td>
+                                <select>
+                                    <option>Trainer</option>
+                                    <option>Learner</option>
+                                    <option>Admin</option>
+                                </select>
+                            </td>
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="manage-btn"
+                                        onclick="saveRole(this)">
+                                    Save
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= COURSE MONITORING ================= -->
+
+    <section id="courses"
+             class="dashboard-section">
+
+        <div class="section-title">
+
+            <h2>Course Monitoring</h2>
+
+            <p>
+                Monitor courses and their current status.
+            </p>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+
+                <div>
+
+                    <span>Total Courses</span>
+
+                    <strong>86</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div>
+
+                    <span>Published</span>
+
+                    <strong>64</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    <i class="fa-solid fa-hourglass-half"></i>
+                </div>
+
+                <div>
+
+                    <span>Under Review</span>
+
+                    <strong>14</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h3>Course Status</h3>
+
+            <div class="course-item">
+
+                <div>
+
+                    <strong>Digital Skills Fundamentals</strong>
+
+                    <span>Trainer: Neha Patel</span>
+
+                </div>
+
+                <span class="status published">
+                    Published
+                </span>
+
+            </div>
+
+
+            <div class="course-item">
+
+                <div>
+
+                    <strong>Leadership Development</strong>
+
+                    <span>Trainer: Amit Sharma</span>
+
+                </div>
+
+                <span class="status review">
+                    Under Review
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ASSESSMENT ================= -->
+
+    <section id="assessment"
+             class="dashboard-section">
+
+        <div class="section-title">
+
+            <h2>Assessment Statistics</h2>
+
+            <p>
+                View assessment performance across the platform.
+            </p>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+
+                <div>
+
+                    <span>Total Assessments</span>
+
+                    <strong>342</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div>
+
+                    <span>Completed</span>
+
+                    <strong>2,840</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    <i class="fa-solid fa-percent"></i>
+                </div>
+
+                <div>
+
+                    <span>Average Score</span>
+
+                    <strong>78%</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h3>Assessment Performance</h3>
+
+            <div class="progress-item">
+
+                <span>Course Assessments</span>
+
+                <div class="progress-bar">
+
+                    <div style="width:78%"></div>
+
+                </div>
+
+                <strong>78%</strong>
+
+            </div>
+
+
+            <div class="progress-item">
+
+                <span>Skill Assessments</span>
+
+                <div class="progress-bar">
+
+                    <div style="width:84%"></div>
+
+                </div>
+
+                <strong>84%</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CERTIFICATION ================= -->
+
+    <section id="certification"
+             class="dashboard-section">
+
+        <div class="section-title">
+
+            <h2>Certification Statistics</h2>
+
+            <p>
+                Monitor certificates issued to learners.
+            </p>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Certificates Issued</span>
+
+                    <strong>524</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+
+                    <i class="fa-solid fa-award"></i>
+
+                </div>
+
+                <div>
+
+                    <span>This Month</span>
+
+                    <strong>82</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Completion Rate</span>
+
+                    <strong>72%</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PARTICIPATION ================= -->
+
+    <section id="participation"
+             class="dashboard-section">
+
+        <div class="section-title">
+
+            <h2>Participation Analytics</h2>
+
+            <p>
+                Track learner participation and platform engagement.
+            </p>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+
+                    <i class="fa-solid fa-user-group"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Active Learners</span>
+
+                    <strong>936</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Weekly Participation</span>
+
+                    <strong>81%</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Average Learning Time</span>
+
+                    <strong>4.6h</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h3>Participation Levels</h3>
+
+            <div class="participation-chart">
+
+                <div style="height:45%">
+                    <span>Mon</span>
+                </div>
+
+                <div style="height:65%">
+                    <span>Tue</span>
+                </div>
+
+                <div style="height:55%">
+                    <span>Wed</span>
+                </div>
+
+                <div style="height:80%">
+                    <span>Thu</span>
+                </div>
+
+                <div style="height:72%">
+                    <span>Fri</span>
+                </div>
+
+                <div style="height:88%">
+                    <span>Sat</span>
+                </div>
+
+                <div style="height:60%">
+                    <span>Sun</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ANNOUNCEMENTS ================= -->
+
+    <section id="announcements"
+             class="dashboard-section">
+
+        <div class="section-title">
+
+            <h2>Announcements & Notifications</h2>
+
+            <p>
+                Send important announcements to platform users.
+            </p>
+
+        </div>
+
+
+        <div class="announcement-grid">
+
+
+            <div class="panel">
+
+                <h3>Create Announcement</h3>
+
+
+                <label>Title</label>
+
+                <input type="text"
+                       id="announcementTitle"
+                       placeholder="Announcement title">
+
+
+                <label>Message</label>
+
+                <textarea id="announcementMessage"
+                          rows="6"
+                          placeholder="Write your announcement..."></textarea>
+
+
+                <label>Send To</label>
+
+                <select id="announcementAudience">
+
+                    <option>All Users</option>
+
+                    <option>Learners</option>
+
+                    <option>Trainers</option>
+
+                    <option>Administrators</option>
+
+                </select>
+
+
+                <button class="send-btn"
+                        onclick="sendAnnouncement()">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Send Announcement
+
+                </button>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h3>Recent Announcements</h3>
+
+
+                <div id="announcementList">
+
+                    <div class="announcement-item">
+
+                        <strong>
+                            Welcome to Capacity Connect
+                        </strong>
+
+                        <p>
+                            Platform learning activities are now available.
+                        </p>
+
+                        <span>
+                            Sent to All Users
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<script src="admin-dashboard.js"></script>
+
+</body>
+
+</html>
